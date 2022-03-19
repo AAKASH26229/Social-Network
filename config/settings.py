@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    'django_bootstrap_icons',
+    'django_seed',
+
     'users',
     'profiles',
-    
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -131,4 +134,4 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_URL = "/accounts/login/"
 LOGOUT_REDIRECT_URL = "/"
-LOGIN_REDIRECT_URL = "/accounts/profile/"
+LOGIN_REDIRECT_URL = "/"

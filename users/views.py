@@ -1,7 +1,9 @@
 import uuid
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
+from django.contrib import messages
+
 from .forms import CustomUserCreationForm
 # Create your views here.
 def signUpView(request):
@@ -20,7 +22,7 @@ def signUpView(request):
             user.save()
             
             login(request,user)
-            
+            messages.success(request, 'User registered and logged in successfully')
             return redirect("/")
             
             
