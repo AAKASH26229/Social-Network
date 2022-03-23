@@ -24,9 +24,11 @@ def signUpView(request):
             login(request,user)
             messages.success(request, 'User registered and logged in successfully')
             return redirect("/")
-            
-            
-    
+        else:
+            # Do something in case if form is not valid
+            raise Http404     
+       
+
     return render(request, 'registration/signup.html', {
         "form": form
     })
